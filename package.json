@@ -5,7 +5,7 @@
   "main": "./src/bin.js",
   "scripts": {
     "test": "ava",
-    "build": "npx microbundle -i ./src/bin.js -o ./dist/wareki2era.browser.js --name wareki2era --mode cjs"
+    "build": "npx rollup -c"
   },
   "keywords": [
     "japanese",
