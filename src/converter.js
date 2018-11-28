@@ -1,5 +1,5 @@
-// http://sm.2-d.jp/ktoi.js
-// export default function(jpnEra) {
+// src/converter.js
+
 module.exports = jpnEra => {
   let digits = ["十", "百", "千"];
   let jpnNumber = ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九"];

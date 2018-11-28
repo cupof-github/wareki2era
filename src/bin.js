@@ -1,7 +1,6 @@
+// src/bin.js
 const jpnToArabic = require("./converter");
-// import jpnToArabic from "./converter";
 
-// export default function(str, format){
 module.exports = (str, format) => {
   const jpnEra = /(明治|大正|昭和|平成)/;
   let spliter = format === undefined ? "/" : format;
