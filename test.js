@@ -1,6 +1,6 @@
 import test from "ava";
-import lib from "./src/bin";
-// import lib from "./index";
+// import lib from "./src/bin";
+import lib from "./index";
 
 // create tesing elements
 const addEr = era => {
@@ -53,7 +53,7 @@ test("meiji(明治) test", t => {
 
 test("taisho(大正) test", t => {
   let tEl = addEr("大正"); // create test elements
-  let y = 1912; // beginning of year of showa
+  let y = 1912; // beginning of year of Taishow
 
   t.is(lib(tEl[0]), year(y) + "/1/4");
   t.is(lib(tEl[1]), year(y) + "/10/14");
@@ -81,7 +81,7 @@ test("shouwa(昭和) test", t => {
 
 test("heisei(平成) test", t => {
   let tEl = addEr("平成"); // create test elements
-  let y = 1989; // beginning of year of showa
+  let y = 1989; // beginning of year of Heisei
 
   t.is(lib(tEl[0]), year(y) + "/1/4");
   t.is(lib(tEl[1]), year(y) + "/10/14");
@@ -95,7 +95,7 @@ test("heisei(平成) test", t => {
 
 test("format", t => {
   let tEl = addEr("昭和"); // create test elements
-  let y = 1926; // beginning of year
+  let y = 1926; // beginning of showa
 
   t.is(lib(tEl[0], "-"), year(y) + "-1-4");
   t.is(lib(tEl[0], "j"), year(y) + "年1月4日"); // 1926年1月4日
