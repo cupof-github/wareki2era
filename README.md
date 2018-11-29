@@ -62,7 +62,7 @@ wareki2era(jpnEra, "-"); // 1912-12-10
 wareki2era(jpnEra, "#"); // 1912#12#10
 ```
 
-In addition `j` option is return japanese date string of date.
+In addition `j` option is return japanese date of string.
 
 ```js
 // with 'j' option
