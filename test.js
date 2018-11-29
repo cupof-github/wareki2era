@@ -1,7 +1,6 @@
 import test from "ava";
-// import lib from "./src/bin";
-import lib from "./index";
-
+import lib from "./src/bin";
+// import lib from "./index";
 
 // create tesing elements
 const addEr = era => {
@@ -17,7 +16,9 @@ const addEr = era => {
     "二十六年七月二十八日", // 26/7/28 : 8
     "六十四年一月二日", // 64/1/2 : 9
     "六十四年　一月二日", // 64/1/2 : 10 * containing 2byte sapce
-    "六十四年 一月二日" // 64/1/2 : 11 * containing space
+    "六十四年 一月二日", // 64/1/2 : 11 * containing space
+    "元年三月二日", // 1/3/2 :12
+    "元年年三月二日" // 1/3/2 :13 //invalid
   ];
 
   let arr = new Array();
@@ -47,6 +48,7 @@ test("meiji(明治) test", t => {
   t.is(lib(tEl[6]), year(y, 20) + "/11/20");
   t.is(lib(tEl[7]), year(y, 26) + "/7/28");
   t.is(lib(tEl[8]), year(y, 26) + "/7/28");
+  t.is(lib(tEl[12]), year(y) + "/3/2");
 });
 
 test("taisho(大正) test", t => {

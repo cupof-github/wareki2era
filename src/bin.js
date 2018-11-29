@@ -3,7 +3,6 @@ const jpnToArabic = require("./converter");
 
 module.exports = (str, format) => {
   const jpnEra = /(明治|大正|昭和|平成)/;
-  let spliter = format === undefined ? "/" : format;
 
   // create an array for manipulation
   let baseElements = str
@@ -14,7 +13,8 @@ module.exports = (str, format) => {
     .filter(v => v != "");
 
   // validations
-  if (baseElements.length != 2) throw "invalid format exception. (明治|大正|昭和|平成)";
+  if (baseElements.length != 2)
+    throw "invalid 'Wareki' format exception. (明治|大正|昭和|平成)";
   if ((baseElements[1].match(/\//gi) || []).length !== 2)
     throw "invalid format: (shold be -> ##年##月##日) .";
   // ! validatons
@@ -33,7 +33,7 @@ module.exports = (str, format) => {
     .replace(/昭和/g, 1926 - 1)
     .replace(/平成/g, 1989 - 1);
 
-  // result Date [Year, Month, Day]
+  // result Date [jpnEra + Year, Month, Day]
   let rDate = [
     parseInt(fromJpnEra) + parseInt(arr[0]),
     parseInt(arr[1]),
@@ -43,7 +43,7 @@ module.exports = (str, format) => {
   let result =
     format === "j"
       ? rDate[0] + "年" + rDate[1] + "月" + rDate[2] + "日"
-      : rDate.join(spliter);
+      : rDate.join(format === undefined ? "/" : format);
 
   return result;
 };
