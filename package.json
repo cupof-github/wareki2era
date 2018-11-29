@@ -2,7 +2,7 @@
   "name": "wareki2era",
   "version": "0.3.0",
   "description": "convert japanese Wareki(和暦) to Era(西暦)",
-  "main": "./src/bin.js",
+  "main": "index.js",
   "scripts": {
     "test": "ava",
     "build": "npx rollup -c"
@@ -11,7 +11,8 @@
     "japanese",
     "wareki",
     "era",
-    "date"
+    "date",
+    "convert"
   ],
   "author": "cupOF",
   "license": "MIT",
