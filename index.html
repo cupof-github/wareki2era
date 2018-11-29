@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>hello</h1>
 
-  </body>
-  <script src="./dist/wareki2era.browser.js" charset="utf-8"></script>
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+</head>
 
-  <script>
+<body>
 
-    var str = '平成一九年三月二日';
-    console.log(wareki2era(str, 'j'));
 
-  </script>
+</body>
+<script src="./dist/wareki2era.browser.js" charset="utf-8"></script>
+
+<script>
+  var arr = [{
+      key: '明治元年三月二日', // 0
+      val: "1868/3/2"
+    }, {
+      key: '明治八年十二月五日', // 1
+      val: "1875/12/5"
+    }, {
+      key: '明治四五年一二月十日', // 2
+      val: "1912/12/10"
+    }, {
+      key: '大正元年七月三〇日', // 3
+      val: "1912/7/30"
+    }, {
+      key: '大正一五年十二月四日', // 4
+      val: "1926/12/4"
+    }, {
+      key: '昭和八年九月九日', // 5
+      val: "1933/9/9"
+    },
+    {
+      key: '昭和五十年十一月三十日', // 5
+      val: "1975/11/30"
+    },
+    {
+      key: '昭和五十九年十月二日', // 5
+      val: "1984/10/2"
+    },
+    {
+      key: '平成元年十月二日', // 5
+      val: "1989/10/2"
+    },
+    {
+      key: '平成二〇年七月六日', // 5
+      val: "2008/7/6"
+    }
+
+  ];
+
+  var format = [{
+      key: '昭和八年九月九日', // 0
+      val: "1933年9月9日"
+    },
+    {
+      key: '昭和八年九月九日', // 1
+      val: "1933-9-9"
+    },
+  ]
+
+
+  //------- testing --------------
+  for (var i = 0; i < arr.length; i++) {
+    console.assert(wareki2era(arr[i].key) === arr[i].val);
+  }
+
+  // format test
+  console.assert(wareki2era(format[0].key, 'j') === format[0].val);
+  console.assert(wareki2era(format[1].key, '-') === format[1].val);
+</script>
+
 </html>
