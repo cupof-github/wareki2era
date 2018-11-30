@@ -33,7 +33,7 @@ const wareki2era = require("wareki2era");
 
 let jpnEra = "明治四五年一二月十日";
 
-wareki2era(jpnEra); // 1912/12/10
+wareki2era(jpnEra); // 1912-12-10
 ```
 
 **Web browser**
@@ -42,7 +42,7 @@ wareki2era(jpnEra); // 1912/12/10
 <script>
 var jpnEra = '昭和八年九月九日';
 
-console.log(wareki2era(jpnEra)); // 1933/9/9
+console.log(wareki2era(jpnEra)); // 1933-09-09
 
 </script>
 ```
@@ -55,10 +55,10 @@ With second argument, you can assgin splited character whatever you want.
 var jpnEra = "明治四五年一二月十日";
 
 // default
-wareki2era(jpnEra); // 1912/12/10
+wareki2era(jpnEra); // 1912-12-10
 
 // with option
-wareki2era(jpnEra, "-"); // 1912-12-10
+wareki2era(jpnEra, "/"); // 1912/12/10
 wareki2era(jpnEra, "#"); // 1912#12#10
 ```
 

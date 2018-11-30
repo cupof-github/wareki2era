@@ -3,6 +3,7 @@ const jpnToArabic = require("./converter");
 
 module.exports = (str, format) => {
   const jpnEra = /(明治|大正|昭和|平成)/;
+  const unit = n => (n <= 9) ? '0' + n : n;
 
   // create an array for manipulation
   let baseElements = str
@@ -36,14 +37,14 @@ module.exports = (str, format) => {
   // result Date [jpnEra + Year, Month, Day]
   let rDate = [
     parseInt(fromJpnEra) + parseInt(arr[0]),
-    parseInt(arr[1]),
-    parseInt(arr[2])
+    unit(parseInt(arr[1])),
+    unit(parseInt(arr[2]))
   ];
 
   let result =
     format === "j"
-      ? rDate[0] + "年" + rDate[1] + "月" + rDate[2] + "日"
-      : rDate.join(format === undefined ? "/" : format);
+      ? rDate[0] + "年" + parseInt(rDate[1]) + "月" + parseInt(rDate[2]) + "日"
+      : rDate.join(format === undefined ? "-" : format);
 
   return result;
 };
