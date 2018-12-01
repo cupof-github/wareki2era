@@ -3,7 +3,7 @@ const jpnToArabic = require("./converter");
 
 module.exports = (str, format) => {
   const jpnEra = /(明治|大正|昭和|平成)/;
-  const unit = n => (n <= 9) ? '0' + n : n;
+  const unit = n => (n <= 9 ? "0" + n : n);
 
   // create an array for manipulation
   let baseElements = str
@@ -20,7 +20,7 @@ module.exports = (str, format) => {
     throw "invalid format: (shold be -> ##年##月##日) .";
   // ! validatons
 
-  let arr = new Array();
+  let arr = [];
 
   // convert jpn kanji-number to arabic number
   baseElements[1]

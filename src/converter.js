@@ -50,8 +50,8 @@ module.exports = jpnEra => {
     }
   }
 
-  for (var i = 0; i < number.length; i++) {
-    total += number[i];
+  for (var c = 0; c < number.length; c++) {
+    total += number[c];
   }
 
   return total;
