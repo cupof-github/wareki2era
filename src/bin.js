@@ -1,5 +1,5 @@
 // src/bin.js
-const jpnToArabic = require("./converter");
+const toNumeric = require("./converter");
 
 module.exports = (str, format) => {
   const jpnEra = /(明治|大正|昭和|平成)/;
@@ -22,10 +22,10 @@ module.exports = (str, format) => {
 
   let arr = [];
 
-  // convert jpn kanji-number to arabic number
+  // convert jpn kanji-number to numerical number
   baseElements[1]
     .split("/")
-    .map(v => arr.push(jpnToArabic(v == "元" ? (v = "一") : v)));
+    .map(v => arr.push(toNumeric(v == "元" ? (v = "一") : v)));
 
   // convert jpn era to numberinc year
   let fromJpnEra = baseElements[0]
