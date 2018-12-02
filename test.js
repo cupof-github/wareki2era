@@ -21,7 +21,7 @@ const addEr = era => {
     "元年年三月二日" // 1-03-02 :13 //invalid
   ];
 
-  let arr = new Array();
+  let arr = [];
 
   el.map(v => arr.push(era + v));
 
