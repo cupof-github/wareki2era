@@ -3,7 +3,7 @@ const toNumeric = require("./converter");
 
 module.exports = (str, format) => {
   const jpnEra = /(明治|大正|昭和|平成)/;
-  const unit = n => (n <= 9 ? "0" + n : n);
+  const unit = n => (n <= 9 ? "0" + n : parseInt(n));
 
   // create an array for manipulation
   let baseElements = str
@@ -37,8 +37,8 @@ module.exports = (str, format) => {
   // result Date [jpnEra + Year, Month, Day]
   let rDate = [
     parseInt(fromJpnEra) + parseInt(arr[0]),
-    unit(parseInt(arr[1])),
-    unit(parseInt(arr[2]))
+    unit(arr[1]),
+    unit(arr[2])
   ];
 
   let result =
