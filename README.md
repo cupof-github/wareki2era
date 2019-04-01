@@ -23,7 +23,7 @@ Or you can import directly via CDN.
 
 ### wareki2era( JapaneseEraDate ) : String
 
-> `japaneseEraDate` shoud be `(明治|大正|昭和|平成)YYYY年MM月DD日`
+> `japaneseEraDate` shoud be `(明治|大正|昭和|平成|令和)YYYY年MM月DD日`
 
 **CommonJS (node.js) || ES6 or later (babel)**
 
@@ -68,6 +68,10 @@ In addition `j` option is return japanese date of string.
 // with 'j' option
 wareki2era(jpnEra, "j"); // 1912年12月10日
 ```
+
+## Changelog
+
+- **version 1.0.0** : Adapted '令和'
 
 ## Credit
 

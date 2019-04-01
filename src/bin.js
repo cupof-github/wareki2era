@@ -2,7 +2,7 @@
 const toNumeric = require("./converter");
 
 module.exports = (str, format) => {
-  const jpnEra = /(明治|大正|昭和|平成)/;
+  const jpnEra = /(明治|大正|昭和|平成|令和)/;
   const unit = n => (n <= 9 ? "0" + n : parseInt(n));
 
   // create an array for manipulation
@@ -15,7 +15,7 @@ module.exports = (str, format) => {
 
   // validations
   if (baseElements.length != 2)
-    throw "invalid 'Wareki' format exception. (明治|大正|昭和|平成)";
+    throw "invalid 'Wareki' format exception. (明治|大正|昭和|平成|令和)";
   if ((baseElements[1].match(/\//gi) || []).length !== 2)
     throw "invalid format: (shold be -> ##年##月##日) .";
   // ! validatons
@@ -32,7 +32,8 @@ module.exports = (str, format) => {
     .replace(/明治/g, 1868 - 1)
     .replace(/大正/g, 1912 - 1)
     .replace(/昭和/g, 1926 - 1)
-    .replace(/平成/g, 1989 - 1);
+    .replace(/平成/g, 1989 - 1)
+    .replace(/令和/g, 2019 - 1);
 
   // result Date [jpnEra + Year, Month, Day]
   let rDate = [

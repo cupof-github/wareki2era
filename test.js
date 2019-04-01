@@ -1,6 +1,7 @@
 import test from "ava";
 // import lib from "./src/bin";
 import lib from "./index";
+const log = console.log;
 
 // create tesing elements
 const addEr = era => {
@@ -91,6 +92,21 @@ test("heisei(平成) test", t => {
   t.is(lib(tEl[5]), year(y, 10) + "-11-20");
   t.is(lib(tEl[7]), year(y, 26) + "-07-28");
   t.is(lib(tEl[8]), year(y, 26) + "-07-28");
+});
+
+test("reiwa(令和) test", t => {
+  let tEl = addEr('令和'); // create test elements
+  let y = 2019; // beginning of year of Reiwa
+
+  t.is(lib(tEl[0]), year(y) + "-01-04");
+  t.is(lib(tEl[1]), year(y) + "-10-14");
+  t.is(lib(tEl[2]), year(y) + "-10-14");
+  t.is(lib(tEl[3]), year(y) + "-11-04");
+  t.is(lib(tEl[4]), year(y, 4) + "-11-04");
+  t.is(lib(tEl[5]), year(y, 10) + "-11-20");
+  t.is(lib(tEl[7]), year(y, 26) + "-07-28");
+  t.is(lib(tEl[8]), year(y, 26) + "-07-28");
+
 });
 
 test("format", t => {

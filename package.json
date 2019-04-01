@@ -1,6 +1,6 @@
 {
   "name": "wareki2era",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "description": "convert japanese Wareki(和暦) to Era(西暦)",
   "main": "index.js",
   "scripts": {
@@ -21,13 +21,13 @@
     "url": "https://github.com/cupof-github/wareki2era"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "ava": "1.0.0-rc.2",
-    "rollup": "^0.67.3",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-uglify": "^6.0.0"
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "ava": "^1.4.1",
+    "rollup": "^1.7.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.2",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-uglify": "^6.0.2"
   }
 }

@@ -5,18 +5,21 @@ import {uglify} from "rollup-plugin-uglify";
 
 export default [
   {
-    entry: "./src/bin.js",
-    dest: `dist/wareki2era.browser.js`,
-    plugins: [nodeResolve({jsnext: true}), commonjs(), babel(), uglify()],
-    format: "iife",
-    moduleName: "wareki2era"
+    input: "./src/bin.js",
+    output: {
+      name: "wareki2era",
+      file: "dist/wareki2era.browser.js",
+      format: "iife"
+    },
+    plugins: [nodeResolve({jsnext: true}), commonjs(), babel(), uglify()]
   },
-
   {
-    entry: "./src/bin.js",
-    dest: `index.js`,
-    plugins: [nodeResolve({jsnext: true}), commonjs(), babel(), uglify()],
-    format: "umd",
-    moduleName: "wareki2era"
+    input: "./src/bin.js",
+    output: {
+      name: "wareki2era",
+      file: "index.js",
+      format: "umd"
+    },
+    plugins: [nodeResolve({jsnext: true}), commonjs(), babel(), uglify()]
   }
 ];
